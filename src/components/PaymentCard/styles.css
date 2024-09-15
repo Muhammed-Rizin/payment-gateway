@@ -1,0 +1,52 @@
+.payment-card {
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.payment-card:hover {
+  transform: scale(1.05);
+}
+
+.payment-card:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.payment-card:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.gateway-logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.payment-card {
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.payment-card.disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.card-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card-link.disabled {
+  pointer-events: none;
+}

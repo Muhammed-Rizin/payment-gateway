@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #0072ff;
+  box-shadow: 0 0 0 2px rgba(0, 114, 255, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0072ff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+button:hover:not(:disabled) {
+  box-shadow: 0px 10px 20px rgba(0, 114, 255, 0.3);
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 12px;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-bottom: 2px solid #0072ff;
+  box-shadow: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: unset;
+}
+
+@media (max-width: 600px) {
+  button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}

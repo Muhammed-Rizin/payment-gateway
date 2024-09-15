@@ -1,0 +1,68 @@
+/* src/app/components/PaymentFailure/styles.css */
+
+.failure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f6f9;
+  margin: 0;
+}
+
+.failure-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 90%; /* Adjust width to 90% of viewport width */
+}
+
+.failure-title {
+  font-size: 2rem;
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.failure-message {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.retry-button,
+.return-home-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+}
+
+.retry-button {
+  background-color: #ff9800;
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #e68900;
+}
+
+.return-home-button {
+  background-color: #5271ff;
+  color: white;
+}
+
+.return-home-button:hover {
+  background-color: #405bb5;
+}

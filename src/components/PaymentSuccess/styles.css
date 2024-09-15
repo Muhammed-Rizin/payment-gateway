@@ -1,0 +1,57 @@
+/* src/app/components/PaymentSuccess/styles.css */
+
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f6f9;
+  margin: 0;
+}
+
+.success-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 90%; /* Adjust width to 90% of viewport width */
+}
+
+.success-title {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.success-details {
+  margin-bottom: 2rem;
+}
+
+.success-message {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.amount-info {
+  font-size: 1rem;
+  color: #666;
+}
+
+.return-home-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #5271ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.return-home-button:hover {
+  background-color: #405bb5;
+}

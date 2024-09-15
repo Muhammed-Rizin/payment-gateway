@@ -1,0 +1,114 @@
+.payment-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-form-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-form-card h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.floating-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 12px 12px 12px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-bottom-color: #0072ff;
+}
+
+.form-group input:focus + .floating-label,
+.form-group.filled .floating-label {
+  top: -16px;
+  font-size: 12px;
+  color: #0072ff;
+}
+
+.input-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0072ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.form-group input:focus + .floating-label + .input-bar {
+  transform: scaleX(1);
+}
+
+.pay-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pay-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pay-button:hover:not(:disabled) {
+  box-shadow: 0px 10px 20px rgba(0, 114, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  .payment-form-card {
+    padding: 30px;
+  }
+
+  .payment-form-card h2 {
+    font-size: 1.5rem;
+  }
+}
