@@ -5,6 +5,7 @@ import models from "../model/index.js";
 import moment from "moment";
 import ErrorHandler from "../utils/errorHandler.js";
 import crypto from "crypto";
+import { RAZORPAY_SECRET } from "../config/index.js";
 
 const storage = (folder) =>
   multer.diskStorage({
@@ -132,8 +133,12 @@ export const paginationValues = ({ page, limit }) => {
   return { page, limit, skip };
 };
 
-export const generatedSignature = ({ razorpayOrderId, razorpayPaymentId }) => {
-  const keySecret = process.env.RAZORPAY_SECRET;
+export const generatedRazorpaySignature = ({ razorpayOrderId, razorpayPaymentId }) => {
+  const keySecret = RAZORPAY_SECRET;
+
+  if (!keySecret) throw new Error("Razorpay key secret is not defined in environment variables.");
+  if (!razorpayOrderId || !razorpayPaymentId)
+    throw new Error("Order ID and Payment ID are required.");
 
   if (!keySecret) throw new Error("Razorpay key secret is not defined in environment variables.");
   const sig = crypto
@@ -142,3 +147,9 @@ export const generatedSignature = ({ razorpayOrderId, razorpayPaymentId }) => {
     .digest("hex");
   return sig;
 };
+
+export function generatePayUShortOrderId(prefix = "order_") {
+  const timestamp = Date.now().toString(36);
+  const randomString = crypto.randomBytes(2).toString("base64").replace(/\W/g, "");
+  return `${prefix}${timestamp}${randomString}`;
+}

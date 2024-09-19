@@ -3,7 +3,7 @@ import Razorpay from "razorpay";
 
 import asyncErrorHandler from "../middleware/asyncErrorHandler.js";
 import { RAZORPAY_KEY, RAZORPAY_SECRET } from "../config/index.js";
-import { generatedSignature } from "../helper/functions.js";
+import { generatedRazorpaySignature } from "../helper/functions.js";
 
 const razorpay = new Razorpay({ key_id: RAZORPAY_KEY, key_secret: RAZORPAY_SECRET });
 
@@ -29,9 +29,9 @@ export const initialize = asyncErrorHandler(async (req) => {
 });
 
 export const verifyPayments = asyncErrorHandler(async (req) => {
-  const { orderCreationId, razorpayPaymentId, razorpaySignature } = req.body;
+  const { razorpayOrderId, razorpayPaymentId, razorpaySignature } = req.body;
 
-  const signature = generatedSignature({ orderCreationId, razorpayPaymentId });
+  const signature = generatedRazorpaySignature({ razorpayOrderId, razorpayPaymentId });
   if (signature !== razorpaySignature) throw new Error("Payment verification failed", 400);
 
   return new Response("Payment verified successfully", null, 200);
