@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { PaymentCardProps } from "@/types/PaymentCards";
+import { PaymentCardProps } from "@/types/payments.types";
 
 import "./styles.css";
 

@@ -1,10 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import "./styles.css";
 import PaymentCard from "../PaymentCard";
 
 const Dashboard = () => {
-  // Pay pal, Amazon Pay, My futura, instamojo
   const paymentGateways = [
     {
       link: "/razorpay",
@@ -16,7 +14,7 @@ const Dashboard = () => {
       link: "/payu",
       logo: "https://devguide.payu.in/website-assets/uploads/2021/12/new-payu-logo.svg",
       name: "PayU",
-      disabled: true,
+      disabled: false,
     },
     {
       link: "/paytm",
